@@ -1,0 +1,36 @@
+{
+  "name": "se2-foundry-project",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/foundry",
+      "packages/nextjs"
+    ]
+  },
+  "scripts": {
+    "build": "yarn workspace @se2/foundry build",
+    "test": "yarn workspace @se2/foundry test",
+    "deploy": "yarn workspace @se2/foundry deploy",
+    "deploy:sepolia": "yarn workspace @se2/foundry deploy:sepolia",
+    "deploy:baseSepolia": "yarn workspace @se2/foundry deploy:baseSepolia",
+    "lint": "yarn next:lint",
+    "next:build": "yarn workspace @se2/nextjs build",
+    "next:check-types": "yarn workspace @se2/nextjs check-types",
+    "next:lint": "yarn workspace @se2/nextjs lint",
+    "next:serve": "yarn workspace @se2/nextjs serve",
+    "postinstall": "husky install",
+    "precommit": "lint-staged",
+    "start": "yarn workspace @se2/nextjs dev",
+    "vercel": "yarn workspace @se2/nextjs vercel",
+    "vercel:yolo": "yarn workspace @se2/nextjs vercel:yolo"
+  },
+  "packageManager": "yarn@3.2.3",
+  "devDependencies": {
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}
